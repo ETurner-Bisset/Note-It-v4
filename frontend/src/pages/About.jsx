@@ -11,7 +11,11 @@ export const AboutPage = () => {
       </p>
       <p>
         You can find the code for this site on{' '}
-        <Link to="#" target="_blank" className="text-link">
+        <Link
+          to="https://github.com/ETurner-Bisset/Note-It-v4"
+          target="_blank"
+          className="text-link"
+        >
           GitHub
         </Link>
       </p>

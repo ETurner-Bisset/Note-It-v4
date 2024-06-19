@@ -1,4 +1,4 @@
-import { Form, Link, redirect } from 'react-router-dom';
+import { Form, Link, redirect, useNavigation } from 'react-router-dom';
 import { Input } from '../components/Input/Input';
 import { Button } from '../components/Button';
 import { toast } from 'react-toastify';
@@ -6,6 +6,8 @@ import { toast } from 'react-toastify';
 import customFetch from '../utils/customFetch';
 
 const Login = () => {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting';
   return (
     <>
       <h2>Login</h2>
@@ -21,7 +23,9 @@ const Login = () => {
         <Link className="text-link link" to="/forgotPassword">
           Forgot Password
         </Link>
-        <Button title="Login">Login</Button>
+        <Button title="Login">
+          {isSubmitting ? 'Logging in...' : 'Login'}
+        </Button>
       </Form>
     </>
   );

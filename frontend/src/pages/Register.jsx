@@ -26,7 +26,9 @@ const Register = () => {
           type="password"
           required
         />
-        <Button title="Signup">{isSubmitting ? 'Submitting' : 'Signup'}</Button>
+        <Button title="Signup">
+          {isSubmitting ? 'Signing up...' : 'Signup'}
+        </Button>
       </Form>
     </>
   );
