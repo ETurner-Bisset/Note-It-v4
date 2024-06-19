@@ -2,17 +2,14 @@ import { Link, useRouteLoaderData } from 'react-router-dom';
 import { FaPenNib } from 'react-icons/fa';
 import { Helmet } from 'react-helmet';
 
-
 import { NotesContainer } from '../components/Notes/NotesContainer';
-
 
 export const HomePage = () => {
   const data = useRouteLoaderData('user');
- 
+  console.log(data);
 
   return (
     <>
-      
       <Helmet>
         <title>Note It</title>
       </Helmet>

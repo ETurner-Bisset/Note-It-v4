@@ -26,7 +26,7 @@ export const RootLayout = () => {
 
 export const loader = async () => {
   try {
-    const response = await customFetch('http://localhost:8080/api/v1/users/me');
+    const response = await customFetch('/me');
     return response;
   } catch (error) {
     // console.log(error);
