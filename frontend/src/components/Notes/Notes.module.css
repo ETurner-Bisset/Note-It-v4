@@ -1,0 +1,186 @@
+.notes-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notes-page a {
+  margin-top: 1rem;
+}
+
+.notes-page p {
+  max-width: 35rem;
+}
+
+.notes-page ul {
+  margin-top: 1rem;
+  height: 100%;
+  width: 100%;
+  max-width: 65rem;
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 0.3rem;
+}
+
+@media (min-width: 45rem) {
+  .notes-page ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 55rem) {
+  .notes-page ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.notes-page ul li {
+  justify-self: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container form {
+  margin: 0;
+}
+
+@media (min-width: 54rem) {
+  .form-container {
+    flex-direction: row;
+  }
+}
+
+.search-container {
+  width: 100%;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.search-container input {
+  margin-left: 0.5rem;
+}
+
+.select {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  padding: 0.2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #000;
+}
+
+.select:focus-visible {
+  outline: none;
+}
+
+.note-actions {
+  margin-top: 1rem;
+  width: 90%;
+  max-width: 32rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.note-actions .button {
+  margin: 0 0.5rem;
+  height: 2.1rem;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: darkgray;
+}
+
+.hidden {
+  display: none;
+}
+
+ul {
+  width: 90%;
+}
+
+.item {
+  list-style-type: square;
+  margin: 0.3rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item label {
+  cursor: pointer;
+}
+
+.edit-container {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.edit-container-text {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: 'text text' 'edit delete';
+  justify-items: center;
+  margin-top: 1rem;
+  max-width: 22.5rem;
+}
+
+.edit-container-text p {
+  grid-area: text;
+}
+
+.edit-container-text button:nth-of-type(1) {
+  grid-area: edit;
+}
+.edit-container-text button:nth-of-type(2) {
+  grid-area: delete;
+}
+
+.edit-form {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  width: 100%;
+}
+
+.input-container {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.input-container input {
+  background-color: transparent;
+  border: none;
+  margin-left: 0.3rem;
+}
+
+.textarea {
+  height: max-content;
+}
+
+.textarea textarea {
+  border: none;
+  background-color: transparent;
+}
+
+.max-width {
+  max-width: 22.5rem;
+}

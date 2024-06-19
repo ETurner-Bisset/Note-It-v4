@@ -1,0 +1,17 @@
+extends emailBase 
+
+block content 
+    p Hi #{firstName},
+    p Welcome to Note It. 🎉🙏
+    p One app for keeping all your notes and lists.
+    table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+        tbody
+            tr
+                td(align='left')
+                    table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                        tbody
+                            tr
+                                td
+                                    a#confirm-btn(href=`${url}`, target='_blank') Activate your account
+    p Please click the button above or copy and paste the link below into your browser to activate your account.
+    p #{url}

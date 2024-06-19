@@ -1,0 +1,37 @@
+.mobileMenu {
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--background-color);
+  text-align: center;
+  border-bottom: 2px solid #000;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  z-index: 150;
+  position: fixed;
+  top: 0;
+}
+
+.mobileMenu ul {
+  margin-top: 1rem;
+  margin: 0 auto;
+}
+
+.mobileMenu ul li {
+  margin: 0.5rem 0;
+}
+
+@media (min-width: 22rem) {
+  .mobileMenu {
+    max-width: 22rem;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    border-radius: var(--border-radius);
+    margin: 0 auto;
+  }
+}
+
+.active {
+  text-decoration: underline;
+  color: #c40c0c;
+}
