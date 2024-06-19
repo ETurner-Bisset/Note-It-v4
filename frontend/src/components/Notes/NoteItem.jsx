@@ -161,9 +161,7 @@ export const NoteItem = () => {
 export const loader = async ({ params }) => {
   const noteId = params.noteId;
   try {
-    const response = await customFetch(
-      `http://localhost:8080/api/v1/notes/${noteId}`
-    );
+    const response = await customFetch(`/api/v1/notes/${noteId}`);
 
     if (response.status !== 'success') {
       toast.error('Error loading note!', {
