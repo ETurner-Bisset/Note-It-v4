@@ -11,10 +11,10 @@ export const SignupConfirmPage = () => {
     const activateAccount = async () => {
       try {
         const response = await customFetch(
-          `http://localhost:8080/api/v1/users/signup/${token}`,
+          `/api/v1/users/signup/${token}`,
           'PATCH'
         );
-        console.log(response);
+        // console.log(response);
         if (response.status !== 'success') {
           const responseData = await response.json();
           toast.error(responseData.message, {
@@ -26,7 +26,7 @@ export const SignupConfirmPage = () => {
           });
         }
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         toast.error('Something went wrong!', {
           position: 'top-center',
         });

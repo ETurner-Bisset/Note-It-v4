@@ -19,10 +19,7 @@ export const ListItem = ({ item }) => {
 
   const handleCheckedToggle = async (iId) => {
     try {
-      const response = await sendRequest(
-        `http://localhost:8080/api/v1/items/${iId}`,
-        'PATCH'
-      );
+      const response = await sendRequest(`/api/v1/items/${iId}`, 'PATCH');
       // console.log(response);
       if (response.status === 'success') {
         setItemState(response.item);
@@ -39,7 +36,7 @@ export const ListItem = ({ item }) => {
   const handleDeleteItem = async (iId) => {
     try {
       const response = await sendRequest(
-        `http://localhost:8080/api/v1/items/${noteId}/${iId}`,
+        `/api/v1/items/${noteId}/${iId}`,
         'DELETE'
       );
       // console.log(response);

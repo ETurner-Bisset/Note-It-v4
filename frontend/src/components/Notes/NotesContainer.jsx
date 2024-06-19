@@ -23,7 +23,7 @@ export const NotesContainer = () => {
 
     try {
       const response = await sendRequest(
-        'http://localhost:8080/api/v1/notes/searchNotes',
+        '/api/v1/notes/searchNotes',
         'POST',
         JSON.stringify(data)
       );
@@ -34,7 +34,7 @@ export const NotesContainer = () => {
         return null;
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -45,9 +45,7 @@ export const NotesContainer = () => {
 
     if (data.sort === 'alpha') {
       try {
-        const response = await sendRequest(
-          'http://localhost:8080/api/v1/notes/sortAlphabetically'
-        );
+        const response = await sendRequest('/api/v1/notes/sortAlphabetically');
         // console.log(response);
         if (response.status !== 'success') {
           toast.error('Error sorting notes!', {
@@ -56,7 +54,7 @@ export const NotesContainer = () => {
         }
         setNotesList(response.notes);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     } else {
       setNotesList(user.notes);

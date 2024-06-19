@@ -33,7 +33,7 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData);
   try {
     const response = await customFetch(
-      'http://localhost:8080/api/v1/users/login',
+      '/api/v1/users/login',
       method,
       JSON.stringify(data)
     );
@@ -51,7 +51,7 @@ export const action = async ({ request }) => {
       return null;
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     toast.error('Error logging in!', {
       position: 'top-center',
     });

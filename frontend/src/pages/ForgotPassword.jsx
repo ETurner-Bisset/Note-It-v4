@@ -24,15 +24,15 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData);
   try {
     const response = await customFetch(
-      'http://localhost:8080/api/v1/users/forgotPassword',
+      '/api/v1/users/forgotPassword',
       method,
       JSON.stringify(data)
     );
-    console.log(response);
+    // console.log(response);
 
     if (response.status !== 'success') {
       const responseData = await response.json();
-      console.log(responseData);
+      // console.log(responseData);
       toast.error(responseData.message || 'Something went wrong!', {
         position: 'top-center',
       });
@@ -44,7 +44,7 @@ export const action = async ({ request }) => {
     }
     return redirect('/');
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     toast.error('Error sending reset link!', {
       position: 'top-center',
     });

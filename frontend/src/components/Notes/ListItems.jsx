@@ -19,7 +19,7 @@ export const ListItems = ({ listItems, noteId }) => {
     if (data.item !== '') {
       try {
         const response = await sendRequest(
-          `http://localhost:8080/api/v1/notes/${noteId}/addItem`,
+          `/api/v1/notes/${noteId}/addItem`,
           'POST',
           JSON.stringify(data)
         );
@@ -46,7 +46,7 @@ export const ListItems = ({ listItems, noteId }) => {
   const handleListOrderUpdate = async (items) => {
     try {
       await sendRequest(
-        `http://localhost:8080/api/v1/notes/${noteId}/list`,
+        `/api/v1/notes/${noteId}/list`,
         'PATCH',
         JSON.stringify(items)
       );

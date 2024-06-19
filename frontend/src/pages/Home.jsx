@@ -6,7 +6,6 @@ import { NotesContainer } from '../components/Notes/NotesContainer';
 
 export const HomePage = () => {
   const data = useRouteLoaderData('user');
-  console.log(data);
 
   return (
     <>

@@ -14,7 +14,7 @@ export const MobileMenu = ({ onClose }) => {
 
   const logout = async () => {
     try {
-      await sendRequest('http://localhost:8080/api/v1/users/logout');
+      await sendRequest('/api/v1/users/logout');
       // console.log(response);
       onClose();
       navigate('/login');

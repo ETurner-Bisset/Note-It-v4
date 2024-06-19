@@ -25,12 +25,12 @@ const EditForm = ({
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
 
-    let url = `http://localhost:8080/api/v1/items/${id}/edit`;
+    let url = `/api/v1/items/${id}/edit`;
 
     if (id === 'noteText') {
-      url = `http://localhost:8080/api/v1/notes/${noteId}/noteText`;
+      url = `/api/v1/notes/${noteId}/noteText`;
     } else if (id === 'title') {
-      url = `http://localhost:8080/api/v1/notes/${noteId}/title`;
+      url = `/api/v1/notes/${noteId}/title`;
     }
 
     try {

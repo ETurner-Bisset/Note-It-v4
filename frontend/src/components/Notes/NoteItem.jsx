@@ -33,10 +33,7 @@ export const NoteItem = () => {
 
   const handleConfirmDelete = async () => {
     try {
-      const response = await sendRequest(
-        `http://localhost:8080/api/v1/notes/${noteId}`,
-        'DELETE'
-      );
+      const response = await sendRequest(`/api/v1/notes/${noteId}`, 'DELETE');
       // console.log(response);
       if (response.status === 204) {
         toast.success('Note deleted!', {
@@ -78,10 +75,7 @@ export const NoteItem = () => {
 
   const handleDeleteText = async () => {
     try {
-      await sendRequest(
-        `http://localhost:8080/api/v1/notes/${noteId}/noteText`,
-        'DELETE'
-      );
+      await sendRequest(`/api/v1/notes/${noteId}/noteText`, 'DELETE');
       // console.log(response);
       navigate(`/${noteId}`);
     } catch (error) {

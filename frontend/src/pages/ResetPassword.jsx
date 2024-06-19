@@ -16,11 +16,11 @@ const ResetPassword = () => {
 
     try {
       const response = await sendRequest(
-        `http://localhost:8080/api/v1/users/resetPassword/${token}`,
+        `/api/v1/users/resetPassword/${token}`,
         'PATCH',
         JSON.stringify(data)
       );
-      console.log(response);
+      // console.log(response);
       if (response.status !== 'success') {
         const responseData = await response.json();
         toast.error(responseData.message || 'Something went wrong!', {
@@ -35,7 +35,7 @@ const ResetPassword = () => {
         }, 500);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error('Something went wrong!', {
         position: 'top-center',
       });

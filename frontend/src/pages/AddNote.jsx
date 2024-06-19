@@ -100,7 +100,7 @@ export const action = async ({ request }) => {
 
   try {
     const response = await customFetch(
-      'http://localhost:8080/api/v1/notes',
+      '/api/v1/notes',
       method,
       JSON.stringify(data)
     );

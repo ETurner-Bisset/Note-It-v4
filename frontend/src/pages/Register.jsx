@@ -38,7 +38,7 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData);
   try {
     const response = await customFetch(
-      'http://localhost:8080/api/v1/users/signup',
+      '/api/v1/users/signup',
       method,
       JSON.stringify(data)
     );
@@ -57,7 +57,7 @@ export const action = async ({ request }) => {
       return null;
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     toast.error('Error signing up!', {
       position: 'top-center',
     });
