@@ -1,4 +1,4 @@
-import { Form, redirect } from 'react-router-dom';
+import { Form, redirect, useNavigation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import { Input } from '../components/Input/Input';
@@ -6,13 +6,17 @@ import { Button } from '../components/Button';
 import customFetch from '../utils/customFetch';
 
 const ForgotPassword = () => {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting';
   return (
     <>
       <h2>Forgot Your Password?</h2>
       <p>An reset link will be sent to the email address you provide.</p>
       <Form method="POST">
         <Input label="Email" id="email" type="email" required />
-        <Button title="Send Link">Send Link</Button>
+        <Button title="Send Link">
+          {isSubmitting ? 'Sending...' : 'Send Link'}
+        </Button>
       </Form>
     </>
   );
