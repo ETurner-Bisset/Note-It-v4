@@ -21,7 +21,7 @@ export const NoteItem = () => {
   const { sendRequest } = useHttpHook();
   const noteId = useParams().noteId;
   const navigate = useNavigate();
-  const note = useLoaderData();
+  const note = useLoaderData('note');
 
   const handleStartDelete = () => {
     setDeleteConfirm(true);
@@ -159,10 +159,10 @@ export const NoteItem = () => {
 };
 
 export const loader = async ({ params }) => {
+  console.log(params.noteId);
   const noteId = params.noteId;
   try {
     const response = await customFetch(`/api/v1/notes/${noteId}`);
-
     if (response.status !== 'success') {
       toast.error('Error loading note!', {
         position: 'top-center',
