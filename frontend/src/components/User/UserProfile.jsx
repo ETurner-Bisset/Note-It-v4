@@ -20,9 +20,9 @@ export const UserProfile = () => {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
 
-    let url = 'http://localhost:8080/api/v1/users/updateMe';
+    let url = '/api/v1/users/updateMe';
     if (e.target.id === 'passwordForm') {
-      url = 'http://localhost:8080/api/v1/users/updatePassword';
+      url = '/api/v1/users/updatePassword';
     }
 
     try {
@@ -61,10 +61,7 @@ export const UserProfile = () => {
 
   const handleConfirmDelete = async () => {
     try {
-      const response = await sendRequest(
-        'http://localhost:8080/api/v1/users/me',
-        'DELETE'
-      );
+      const response = await sendRequest('/api/v1/users/me', 'DELETE');
       console.log(response);
       if (response.status === 204) {
         // const responseData = await response.json();
