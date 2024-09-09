@@ -281,7 +281,7 @@ textarea {
   border-radius: var(--border-radius);
   border: 1px solid #000;
   font-family: inherit;
-  max-width: 95%;
+  /* max-width: 95%; */
 }
 
 input:focus-visible,
