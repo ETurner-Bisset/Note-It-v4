@@ -61,7 +61,7 @@ exports.signup = catchAsync(async (req, res, next) => {
         message: 'Token sent by email.',
       });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       return next(new AppError(error, 500));
     }
   }

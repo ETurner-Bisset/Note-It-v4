@@ -270,7 +270,7 @@ form div {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  width: 95%;
+  /* width: 95%; */
 }
 
 input,

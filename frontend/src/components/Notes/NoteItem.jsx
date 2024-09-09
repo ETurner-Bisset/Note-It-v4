@@ -159,7 +159,7 @@ export const NoteItem = () => {
 };
 
 export const loader = async ({ params }) => {
-  console.log(params.noteId);
+  // console.log(params.noteId);
   const noteId = params.noteId;
   try {
     const response = await customFetch(`/api/v1/notes/${noteId}`);
